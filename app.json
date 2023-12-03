@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "WelcomeHome",
-    "slug": "WelcomeHome",
+    "name": "WH",
+    "slug": "WH",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -19,6 +19,8 @@
     },
     "android": {
       "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "READ_CONTACTS",
         "WRITE_EXTERNAL_STORAGE"
       ],
       "adaptiveIcon": {
