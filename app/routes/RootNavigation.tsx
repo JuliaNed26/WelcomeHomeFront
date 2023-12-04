@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import {StatusBar, StyleSheet, ColorValue, View, Text} from 'react-native';
-import {SafeAreaView} from 'react-native-safe-area-context';9
+import {SafeAreaView} from 'react-native-safe-area-context';
+9;
 import {Link, NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -18,9 +19,12 @@ import Payments from '../screens/Payments/Payments';
 import Work from '../screens/Work/Work';
 import PaymentStruct from '../screens/Payments/PaymentStruct';
 import SocialPaymentForm from '../screens/Payments/PaymentCreate/PaymentCreateForm';
-import StepCreate from '../screens/Payments/PaymentCreate/StepCreate';
-
-
+import Login from '../screens/auth/Login';
+import ChooseRole from '../screens/auth/ChooseRole';
+import StepCreate from '../screens/Payments/PaymentCreate/CreateStep';
+import UserRegister from '../screens/auth/UserRegister';
+import VolonteerRegister from '../screens/auth/volonteer/VolonteerRegister';
+import FlashScreen from '../screens/auth/assets/FlashScreen';
 
 const accIcon = ({color}: {color: ColorValue | number}) => (
   <Icon name="person-outline" size={30} color={color} />
@@ -79,6 +83,41 @@ function WorkStack() {
   );
 }
 
+function AuthTEST() {
+  return (
+    <Stack.Navigator>
+
+      <Stack.Screen
+        name="ChooseRole"
+        component={ChooseRole}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="LogIn"
+        component={Login}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="UserReg"
+        component={UserRegister}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="VolonteerReg"
+        component={VolonteerRegister}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="FlashScreen"
+        component={FlashScreen}
+        options={{
+          headerShown: false,
+      }}
+      />
+    </Stack.Navigator>
+  );
+}
+
 function PaymentsStack() {
   return (
     <Stack.Navigator>
@@ -92,7 +131,6 @@ function PaymentsStack() {
         component={PaymentStruct}
         options={{headerShown: false}}
       />
-      
       <Stack.Screen
         name="PaymentsCreate"
         component={SocialPaymentForm}
@@ -131,11 +169,6 @@ function AccountStack() {
         }}
       />
       <Stack.Screen
-        name="Tell"
-        component={TellScreen}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
         name="NotTell"
         component={TellScreen}
         options={{headerShown: false}}
@@ -160,7 +193,7 @@ export default function RootNavigation() {
     }
     checkIsLogined();
   }, [dispatch]);
-//////////////////////////
+  //////////////////////////
 
   return (
     <SafeAreaView style={styles.container}>
@@ -173,6 +206,7 @@ export default function RootNavigation() {
         <StatusBar backgroundColor="#afc9de" barStyle="light-content" />
 
         {/* {user.token ? ( */}
+
         <Tab.Navigator
           screenOptions={{
             tabBarStyle: {backgroundColor: theme.cardBg},
@@ -190,6 +224,7 @@ export default function RootNavigation() {
               tabBarLabel: '',
             }}
           />
+
           <Tab.Screen
             name="Help"
             component={HelpStack}
@@ -224,6 +259,15 @@ export default function RootNavigation() {
             component={AccountStack}
             options={{
               tabBarIcon: accIcon,
+              headerShown: false,
+              tabBarLabel: '',
+            }}
+          />
+          <Tab.Screen
+            name="AuthTEST"
+            component={AuthTEST}
+            options={{
+              tabBarIcon: paymentsIcon,
               headerShown: false,
               tabBarLabel: '',
             }}

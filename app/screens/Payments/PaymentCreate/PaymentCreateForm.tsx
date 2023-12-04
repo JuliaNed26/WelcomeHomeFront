@@ -51,6 +51,7 @@ const SocialPaymentForm = (props) => {
     setTitle('');
     setDescription('');
     setAmount('');
+    setError('');
     setSteps([]);
   };
 
@@ -202,11 +203,11 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     marginBottom: 30,
     elevation: 4,
-    shadowColor: '#000000',
+    shadowColor: 'gray',
   },
   input: {
     elevation: 4,
-    shadowColor: '#000000',
+    shadowColor: 'gray',
     borderRadius: 10,
     backgroundColor: '#FFF',
     width: '100%',

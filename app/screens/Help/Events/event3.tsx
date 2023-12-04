@@ -88,7 +88,7 @@ export default Event3;
 const styles = StyleSheet.create({
   card: {
     elevation: 3,
-    shadowColor: '#000000',
+    shadowColor: 'gray',
     backgroundColor: '#C9D8E5',
     borderBottomStartRadius: 7,
     width: '93%',

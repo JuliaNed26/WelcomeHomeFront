@@ -135,8 +135,8 @@ const styles = StyleSheet.create({
     // border-radius: 5px,
   },
   card: {
-    elevation: 0.5,
-    shadowColor: '#000000',
+    elevation: 2,
+    shadowColor: 'gray',
     borderBottomStartRadius: 7,
     width: '95%',
     flexDirection: 'row',

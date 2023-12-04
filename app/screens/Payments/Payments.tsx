@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {StyleSheet, FlatList, View, TextInput, Image, Text, Button, TouchableOpacity} from 'react-native';
+import {StyleSheet, FlatList, View, TextInput, Image, Text, Button, TouchableOpacity, ScrollView} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {useTheme} from '../../theme/useTheme';
 import Payment from './Payment';
@@ -51,7 +51,7 @@ const Payments = () => {
   //   text: "- витяг з наказу про виключення загиблого зі списку особового складу військової частини; - документ, що свідчить про причини та обставини загибелі (смерті) військового; - витяг з особової справи про склад сім'ї військовослужбовця."
   // }
   return (
-    <View style={styles.mainContainer}>
+    <ScrollView style={styles.mainContainer}>
       <View style={styles.autoLayerColumn}>
         <Text style={styles.socialPayments}>Соціальні виплати</Text>
         <View style = {styles.underTitle}>
@@ -63,6 +63,7 @@ const Payments = () => {
             <Text style={styles.category2}>Категорія</Text>
           </View>
         </View>
+        
         <View style={styles.edit}>
         <TouchableOpacity onPress={activityHandler}>
 
@@ -90,7 +91,7 @@ const Payments = () => {
           />
         </View>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -99,6 +100,8 @@ export default Payments;
 const styles = StyleSheet.create({
   mainContainer: {
     overflow: 'hidden',
+    backgroundColor: "white",
+    height: "100%"
   },
   autoLayerRow: {
     // position: 'absolute',
@@ -229,14 +232,16 @@ const styles = StyleSheet.create({
   },
   rectangle: {
     // position: 'absolute',
+    paddingTop:5,
+    paddingBottom:300,
     display: 'flex',
     flexDirection: 'column',
     width: '92%',
-    height: '85%',
+    // height: '90%',
     // top: -100,
     left: 18,
-    backgroundColor: '#f5fafc',
-    borderRadius: 30,
+    backgroundColor: '#F1F3F5',
+    borderRadius: 4,
     marginTop: 10,
     // backgroundColor: 'rgb(247, 249, 250)',
     // zIndex: 14,

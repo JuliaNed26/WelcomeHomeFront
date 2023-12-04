@@ -2,10 +2,10 @@ import React, {useState, useRef} from 'react';
 import {StyleSheet, FlatList, View, TextInput, Image, Text} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
-import {taskAdded, taskToggled} from '../../store/paymentsSlice';
+// import {taskAdded, taskToggled} from '../../store/paymentsSlice';
 import {RootState} from '../../store/store';
 // import {Task} from '../store/tasksSlice';
-import {Task} from '../../store/paymentsSlice';
+// import {Task} from '../../store/paymentsSlice';
 import Center from './List/center';
 import {useTheme} from '../../theme/useTheme';
 import Layout from '../../components/Layout';
@@ -17,29 +17,28 @@ const Centers = () => {
 
   const inputRef = useRef<TextInput>(null);
 
-  const todoList = useSelector((state: RootState) => state.todos.entities);
   // const loadingStatus = useSelector((state) => state.todos.status);
   const dispatch = useDispatch();
 
   const [text, setText] = useState('');
 
-  const addNewTask = () => {
-    let temp = text.trim();
-    if (temp !== '') {
-      dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
-    }
-    inputRef.current?.clear();
-  };
+  // const addNewTask = () => {
+  //   let temp = text.trim();
+  //   if (temp !== '') {
+  //     dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
+  //   }
+  //   inputRef.current?.clear();
+  // };
 
-  const onCheckedHandler = (id: string) => {
-    dispatch(taskToggled(id));
-  };
+  // const onCheckedHandler = (id: string) => {
+  //   dispatch(taskToggled(id));
+  // };
 
   // const renderItem = ({item, index}: {item: Task; index: number}) => (
   //   <ListItem item={item} index={index} onPress={onCheckedHandler} />
   // );
 
-  const keyExtractor = (item: Task) => `task-${item.id}`;
+  // const keyExtractor = (item: Task) => `task-${item.id}`;
 
   const centers = [
     {
@@ -78,7 +77,7 @@ const Centers = () => {
                 },
               ]}
               onChangeText={t => setText(t)}
-              onSubmitEditing={() => addNewTask()}
+              onSubmitEditing={() => {}}
             />
           </View>
         </View>

@@ -47,14 +47,14 @@ const {title} = route.params
 
       <View>
          <Text style={styles.oneTimeFinancialAssistance}>
-         Хто має право на отримання одноразової грошової допомоги 
+         Одноразова грошова допомога у разі загибелі військовослужбовця
          </Text>
-        <View style={styles.edit}>
+        {/* <View style={styles.edit}>
           <View style={styles.autoLayerRow1}>
             <Text style={styles.edit2}>Редагувати</Text>
             <SvgEdit/>
           </View>
-        </View>
+        </View> */}
         <View style={styles.description} >
             <Text style={styles.description5}>Опис</Text>
            <TruncateText  initialText={title} maxChars={300} />
@@ -68,8 +68,7 @@ const {title} = route.params
         <View style={styles.howToGet}>
           <View style={styles.autoLayerRow9}>
             <Text style={styles.howToGetInCity}>Як отримати у місті</Text>
-
-            <Text style={styles.category}>Київ</Text>
+            <Text style={styles.category}>Київ                             ↓</Text>
             <View style={styles.arrowLeft}>
               <View style={styles.stroke} />
             </View>
@@ -79,7 +78,7 @@ const {title} = route.params
           <View style={styles.step}>
           <View style={styles.autoLayerRowB}>
             <Text style={styles.step1}>Крок 1.</Text>
-            <View style={styles.editStep}>
+            {/* <View style={styles.editStep}>
           <View style={styles.autoLayerRow1}>
             <Text style={styles.edit2}>Редагувати</Text>
             <SvgEdit/>
@@ -87,19 +86,19 @@ const {title} = route.params
               <View style={styles.edit3} />
             </View>
           </View>
-        </View>
+        </View> */}
             <View style={styles.getDocuments}>
               <Text style={styles.getDocumentsD}>Отримати&nbsp;документи:</Text>
               <Text style={styles.getDocumentsE}>
                 -&nbsp;витяг&nbsp;з&nbsp;наказу&nbsp;про&nbsp;виключення&nbsp;загиблого&nbsp;зі&nbsp;списку&nbsp;особового&nbsp;складу&nbsp;військової&nbsp;частини;-&nbsp;документ,&nbsp;що&nbsp;свідчить&nbsp;про&nbsp;причини&nbsp;та&nbsp;обставини&nbsp;загибелі&nbsp;(смерті)&nbsp;військового;-&nbsp;витяг&nbsp;з&nbsp;особової&nbsp;справи&nbsp;про&nbsp;склад&nbsp;сім'ї&nbsp;військовослужбовця.
               </Text>
             </View>
-            <View style={styles.getDocuments}>
+            {/* <View style={styles.getDocuments}>
               <Text style={styles.getDocumentsD}>Отримати&nbsp;документи:</Text>
               <Text style={styles.getDocumentsE}>
                 -&nbsp;витяг&nbsp;з&nbsp;наказу&nbsp;про&nbsp;виключення&nbsp;загиблого&nbsp;зі&nbsp;списку&nbsp;особового&nbsp;складу&nbsp;військової&nbsp;частини;-&nbsp;документ,&nbsp;що&nbsp;свідчить&nbsp;про&nbsp;причини&nbsp;та&nbsp;обставини&nbsp;загибелі&nbsp;(смерті)&nbsp;військового;-&nbsp;витяг&nbsp;з&nbsp;особової&nbsp;справи&nbsp;про&nbsp;склад&nbsp;сім'ї&nbsp;військовослужбовця.
               </Text>
-            </View>
+            </View> */}
             <View style ={styles.whereInfo}>
             <View style={styles.where}>
               <Text style={styles.where10}>Де ?</Text>
@@ -119,8 +118,8 @@ const {title} = route.params
           </View>
           <View style={styles.step}>
           <View style={styles.autoLayerRowB}>
-            <Text style={styles.step1}>Крок 1.</Text>
-            <View style={styles.editStep}>
+            <Text style={styles.step1}>Крок 2.</Text>
+            {/* <View style={styles.editStep}>
           <View style={styles.autoLayerRow1}>
             <Text style={styles.edit2}>Редагувати</Text>
             <SvgEdit/>
@@ -128,7 +127,7 @@ const {title} = route.params
               <View style={styles.edit3} />
             </View>
           </View>
-        </View>
+        </View> */}
             <View style={styles.getDocuments}>
               <Text style={styles.getDocumentsD}>Отримати&nbsp;документи:</Text>
               <Text style={styles.getDocumentsE}>
@@ -165,6 +164,7 @@ export default PaymentStruct;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
+    backgroundColor: "white"
     // justifyContent: 'center',
     // alignItems: 'center',
   },
@@ -186,8 +186,8 @@ bottom: 10
     // left: 42,
     fontFamily: 'Inter',
     color: 'rgb(0, 0, 0)',
-    fontSize: 18,
-    fontWeight: '600',
+    fontSize: 19,
+    fontWeight: '700',
     lineHeight: 27,
     textAlign: 'center',
     justifyContent: 'center',
@@ -271,9 +271,10 @@ bottom: 10
   },
   description: {
     backgroundColor: '#F7F9FB',
-paddingLeft:10,
-paddingBottom:10,
-paddingTop:5,
+  paddingLeft:10,
+  paddingBottom:10,
+  paddingTop:5,
+  borderRadius: 5,
     width: 367,
     marginTop: 30,
     marginBottom: 20,
@@ -531,6 +532,8 @@ paddingTop:5,
     marginBottom: 15,
   },
   getDocumentsD: {
+    textDecorationLine: 'underline',
+
     fontFamily: 'Inter',
     color: 'rgb(0, 0, 0)',
     fontSize: 15,
@@ -571,7 +574,6 @@ paddingTop:5,
     fontWeight: '600',
     lineHeight: 15,
     textAlign: 'left',
-    textDecoration: 'underline',
     textOverflow: 'initial',
     whiteSpace: 'nowrap',
     zIndex: 40,
@@ -605,6 +607,8 @@ paddingTop:5,
   },
   link: {
     // position: 'absolute',
+    textDecorationLine: 'underline',
+
     width: 198,
     height: 15,
     // top: 124,

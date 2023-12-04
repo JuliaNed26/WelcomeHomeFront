@@ -1,12 +1,12 @@
 import {configureStore} from '@reduxjs/toolkit';
 
 // Slices
-import tasksSlice from './paymentsSlice';
+import paymentsSlice from './paymentsSlice';
 import userSlice from './userSlice';
 
 export const store = configureStore({
   reducer: {
-    todos: tasksSlice,
+    // payments: paymentsSlice,
     user: userSlice,
   },
   middleware: getDefaultMiddleware =>

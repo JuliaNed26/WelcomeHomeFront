@@ -1,28 +1,19 @@
 import React, {useState, useRef} from 'react';
-import {StyleSheet, FlatList, View, TextInput, Image, Text} from 'react-native';
-
-import {useSelector, useDispatch} from 'react-redux';
-import {taskAdded, taskToggled} from '../../store/paymentsSlice';
-import {RootState} from '../../store/store';
-// import {Task} from '../store/tasksSlice';
-import {Task} from '../../store/paymentsSlice';
-
+import {StyleSheet, View, TextInput,} from 'react-native';
+import {useDispatch} from 'react-redux';
 import {useTheme} from '../../theme/useTheme';
 import Layout from '../../components/Layout';
 import Card from '../../components/Card';
-import ListItem from '../../components/ListItem';
 import Event2 from './Events/event2';
 import Event from './Events/event1';
 import Event3 from './Events/event3';
-
-import Svg, {G, Path, Defs, ClipPath, Rect} from 'react-native-svg';
 
 const Help = () => {
   const {theme} = useTheme();
 
   const inputRef = useRef<TextInput>(null);
 
-  const todoList = useSelector((state: RootState) => state.todos.entities);
+  // const todoList = useSelector((state: RootState) => state.todos.entities);
   // const loadingStatus = useSelector((state) => state.todos.status);
   const dispatch = useDispatch();
 
@@ -31,13 +22,13 @@ const Help = () => {
   const addNewTask = () => {
     let temp = text.trim();
     if (temp !== '') {
-      dispatch(taskAdded({id: Date.now(), title: temp, done: false}));
+      dispatch(helpAdded({id: Date.now(), title: temp, done: false}));
     }
     inputRef.current?.clear();
   };
 
   const onCheckedHandler = (id: string) => {
-    dispatch(taskToggled(id));
+    dispatch(helpToggled(id));
   };
 
   // const renderItem = ({item, index}: {item: Task; index: number}) => (
@@ -50,10 +41,8 @@ const Help = () => {
     <Layout>
       <Card
         style={[
-          styles.inputCard,
-          //  {borderTopColor: theme?.cardBorderColor}
+          styles.inputCard
         ]}>
-        {/* TextInput and InputButton starts here */}
         <View style={styles.inputBtnRow}>
           <View style={styles.inputBtnWrp}>
             <TextInput
@@ -69,11 +58,10 @@ const Help = () => {
                 },
               ]}
               onChangeText={t => setText(t)}
-              onSubmitEditing={() => addNewTask()}
+              // onSubmitEditing={() =>()}
             />
           </View>
         </View>
-        {/* TextInput and InputButton ends here */}
       </Card>
       <View
         style={[

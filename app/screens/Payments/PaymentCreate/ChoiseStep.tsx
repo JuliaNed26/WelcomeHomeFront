@@ -144,7 +144,7 @@ const ChouseStep = (props) => {
                   Отримати документи:
                 </Text>
                 <View style={styles.span}>
-                  <TruncateText initialText={el.text} maxChars={300} />
+                  <TruncateText initialText={el.text} maxChars={200} />
                 </View>
               </View>
                         <TouchableOpacity onPress={()=>{activityHandler(el.id)}}>
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
   },
   findStep: {
     elevation: 4,
-    shadowColor: '#000000',
+    shadowColor: 'gray',
     borderRadius: 10,
     backgroundColor: '#FFF',
     width: '80%',

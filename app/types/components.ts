@@ -121,6 +121,16 @@ export interface ExistingStepInDTO {
   stepId: number;
 }
 
+// social-payout-out-dto.interface.ts
+export interface SocialPayoutOutDTO {
+  id: number;
+  name?: string | null;
+  description?: string | null;
+  amount: number;
+  userCategories?: UserCategoryOutDTO[] | null;
+  steps?: StepOutDTO[] | null;
+}
+
 
 // social-payout-in-dto.interface.ts
 export interface SocialPayoutInDTO {
@@ -199,5 +209,15 @@ export interface VolunteerRegisterDTO {
   password: string;
 }
 
+
+// establishment-volunteer-dto.interface.ts
+export interface EstablishmentVolunteerDTO{
+  name: string;
+  address: string;
+  pageURL: string;
+  phoneNumber: string;
+  otherContacts: string;
+  cityId: number;
+}
 
 
